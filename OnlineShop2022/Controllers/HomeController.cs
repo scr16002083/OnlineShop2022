@@ -30,6 +30,11 @@ namespace OnlineShop2022.Controllers
             return View(products);
         }
 
+        public IActionResult ChatBot()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Products(string id)
         {
             var products = await _db.Products.ToListAsync();
