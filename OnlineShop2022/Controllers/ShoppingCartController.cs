@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using OnlineShop2022.Models;
@@ -9,6 +10,7 @@ using OnlineShop2022.Models;
 
 namespace OnlineShop2022.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class ShoppingCartController : Controller
     {
         private readonly IProductRepository _ProductRepository;
