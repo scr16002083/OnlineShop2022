@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OnlineShop2022.Models;
 using Stripe;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnlineShop2022.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;
